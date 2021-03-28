@@ -1,5 +1,8 @@
 {
   "name": "cafeteria",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chartkick": "^3.2.1",
+    "highcharts": "^9.0.1"
+  }
 }

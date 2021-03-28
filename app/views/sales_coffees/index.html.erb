@@ -1,0 +1,34 @@
+<h1 class="text-center my-5">Dashboard</h1>
+
+<div class="container text-center">
+  <h5>Ventas totales de los ultimos 12 meses</h5>
+  <%= column_chart @sales_group_by_month,  label: "Ventas", xtitle: "Mes", ytitle: "ventas", colors: ["#98FB98"], messages: {empty: "No hay datos aun :("}  %>
+  <h5>Cantidad total de ventas de los ultimos 12 meses</h5>
+  <%= column_chart @sales_quantity_twelve_months, label: "Cantidad", xtitle: "Mes", ytitle: "Cantidad de ventas", colors: ["#98FB98"], messages: {empty: "No hay datos aun :("}   %>
+  <h5>Promedio de ventas de los ultimos 12 meses</h5>
+  <%= column_chart @sales_average_twelve_months, label: "Promedio", xtitle: "Mes", ytitle: "Promedio de ventas", colors: ["#98FB98"], messages: {empty: "No hay datos aun :("}   %>
+</div>
+
+<div class="container text-center">
+  <h3>Ventas segun origen del café</h3>
+  <h5>Ultimos 12 meses</h5>
+  <%= pie_chart @origen_twelve_months.group(:origin).count %>
+  <h5>Ultimos 6 meses</h5>
+  <%= pie_chart @origen_six_months.group(:origin).count %>
+  <h5>Ultimos 3 meses</h5>
+  <%= pie_chart @origen_three_months.group(:origin).count %>
+  <h5>Ultimo mes</h5>
+  <%= pie_chart @origen_last_month.group(:origin).count %>
+</div>
+
+<div class="container text-center">
+  <h3>Ventas segun origen del café</h3>
+  <h5>Ultimos 12 meses</h5>
+  <%= pie_chart @blend_name_twelve_months.group(:blend_name).count %>
+  <h5>Ultimos 6 meses</h5>
+  <%= pie_chart @blend_name_six_months.group(:blend_name).count %>
+  <h5>Ultimos 3 meses</h5>
+  <%= pie_chart @blend_name_three_months.group(:blend_name).count %>
+  <h5>Ultimo mes</h5>
+  <%= pie_chart @blend_name_last_month .group(:blend_name).count%>
+</div>

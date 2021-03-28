@@ -1,0 +1,2 @@
+module SalesCoffeesHelper
+end
